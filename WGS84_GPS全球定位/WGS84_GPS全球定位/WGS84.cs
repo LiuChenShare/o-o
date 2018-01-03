@@ -1,5 +1,4 @@
 ﻿using System;
-using WGS84_GPS全球定位;
 
 public class WGS84
 {
