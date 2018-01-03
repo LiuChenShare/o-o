@@ -26,7 +26,9 @@ namespace WGS84_GPS全球定位
             Console.WriteLine("想象成平面时公司和合肥市政务中心的距离是：" + result + "米"); //距离
 
             WGS84 wgs84 = new WGS84();
-            var xxx = wgs84.Distance(31.837964, 117.203123, 31.822426, 117.221662);
+            var coordinateA = new Coordinate() { Latitude = 31.837964, Longitude = 117.203123 };
+            var coordinateB = new Coordinate() { Latitude = 31.822426, Longitude = 117.221662 };
+            var xxx = wgs84.Distance(coordinateA, coordinateB);
             Console.WriteLine("用haversine公式时公司和合肥市政务中心的距离是：" + xxx*1000 + "米"); //距离
 
             Console.ReadKey();
