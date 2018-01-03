@@ -73,7 +73,7 @@ namespace WGS84_GPS全球定位
         /// <param name="lat2">经度2</param>
         /// <param name="lon2">纬度2</param>
         /// <returns>距离（公里、千米）</returns>
-        public static double Distance(double lat1, double lon1, double lat2, double lon2)
+        public double Distance(double lat1, double lon1, double lat2, double lon2)
         {
             //用haversine公式计算球面两点间的距离。
             //经纬度转换成弧度
@@ -111,17 +111,6 @@ namespace WGS84_GPS全球定位
         #endregion 
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
     public class Coordinate
