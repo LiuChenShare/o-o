@@ -25,8 +25,8 @@ namespace WGS84_GPS全球定位
             result = Math.Sqrt(result);//根号
             Console.WriteLine("想象成平面时公司和合肥市政务中心的距离是：" + result + "米"); //距离
 
-            GetDis getDis = new GetDis();
-            var xxx = getDis.Distance(31.837964, 117.203123, 31.822426, 117.221662);
+            WGS84 wgs84 = new WGS84();
+            var xxx = wgs84.Distance(31.837964, 117.203123, 31.822426, 117.221662);
             Console.WriteLine("用haversine公式时公司和合肥市政务中心的距离是：" + xxx*1000 + "米"); //距离
 
             Console.ReadKey();
