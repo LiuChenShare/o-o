@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WGS84_GPS全球定位", "WGS84_GPS全球定位\WGS84_GPS全球定位.csproj", "{F560B1D1-3FDD-4156-93A6-875947FD3B86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "调用埃文科技的IP定位接口", "调用埃文科技的IP定位接口\调用埃文科技的IP定位接口.csproj", "{99652128-F6DA-4261-B08C-04CE94920398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F560B1D1-3FDD-4156-93A6-875947FD3B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F560B1D1-3FDD-4156-93A6-875947FD3B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F560B1D1-3FDD-4156-93A6-875947FD3B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99652128-F6DA-4261-B08C-04CE94920398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99652128-F6DA-4261-B08C-04CE94920398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99652128-F6DA-4261-B08C-04CE94920398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99652128-F6DA-4261-B08C-04CE94920398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
