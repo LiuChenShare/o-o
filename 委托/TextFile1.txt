@@ -1,0 +1,2 @@
+ConsoleApp1
+【C# 中的委托和事件】（http://www.cnblogs.com/JimmyZhang/archive/2007/09/23/903360.html）
