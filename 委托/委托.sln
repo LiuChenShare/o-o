@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文档", "文档", "{BF0267
 		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer设计模式", "Observer设计模式\Observer设计模式.csproj", "{56A42349-7A17-4A19-B3EB-F4843F39B09C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{A0089CD8-4378-4A01-8548-EB3A6C7FF167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0089CD8-4378-4A01-8548-EB3A6C7FF167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0089CD8-4378-4A01-8548-EB3A6C7FF167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A42349-7A17-4A19-B3EB-F4843F39B09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A42349-7A17-4A19-B3EB-F4843F39B09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A42349-7A17-4A19-B3EB-F4843F39B09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A42349-7A17-4A19-B3EB-F4843F39B09C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
