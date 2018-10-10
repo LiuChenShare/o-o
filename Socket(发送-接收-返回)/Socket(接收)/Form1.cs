@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Socket_接收_
@@ -15,26 +16,56 @@ namespace Socket_接收_
     public partial class Form1 : Form
     {
         Thread t;
+        TcpListener tcpl = new TcpListener(new IPAddress(new byte[] { 127, 0, 0, 1 }), 1111);//定义一个TcpListener对象监听本地的1111端口
+        /// <summary>
+        /// 是否启动接收
+        /// </summary>
+        public bool startState { get; set; } = false;
 
         public Form1()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
+        /// <summary>
+        /// 开始接收
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            t = new Thread(ReciveMsg);
-            t.Start();
+            if (!startState)
+            {
+                startState = true;
+                t = new Thread(ReciveMsg);
+                t.Start();
+            }
         }
+
+        /// <summary>
+        /// 停止接收
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!startState)
+            {
+                tcpl.Stop();
+                t.Abort();
+                startState = false;
+            }
+        }
+
 
         /// <summary>        
         /// /// 接收发送给本机ip对应端口号的数据报        
         /// /// </summary>        
-        void ReciveMsg()
+        private void  ReciveMsg()
         {
-            TcpListener tcpl = new TcpListener(new IPAddress(new byte[] { 127, 0, 0, 1 }), 1111);//定义一个TcpListener对象监听本地的1111端口
             tcpl.Start();//监听开始
-            while (true)
+            while (startState)
             {
 
                 Socket s = tcpl.AcceptSocket();//挂起一个Socket对象
@@ -45,19 +76,24 @@ namespace Socket_接收_
 
                 //string str = System.Text.Encoding.Default.GetString(stream, 0, length);
 
-                string _data = System.Text.Encoding.UTF8.GetString(stream, 0, length);//将字节数据数组转为String
-                var result = _data;
+                string _data = Encoding.UTF8.GetString(stream, 0, length);//将字节数据数组转为String
                 s.Send(stream);//将接收到的内容，直接返回接收端
                 s.Shutdown(SocketShutdown.Both);
-                if (!string.IsNullOrEmpty(result))
+                if (!string.IsNullOrEmpty(_data))
                 {
                     //string filePath3 = @"C:\Users\admin\Desktop\log3.txt";
                     //File.AppendAllText(filePath3, Process.GetCurrentProcess().Id + "接收到:" + _data + "\r\n");
-                    
-                    break;
+                    NewMethod(_data);
+                    //break;
                 }
             }
             tcpl.Stop();//停止监听
+            t.Abort();
+        }
+
+        private void NewMethod(string _data)
+        {
+            listBox1.Items.Add(_data);
         }
     }
 }

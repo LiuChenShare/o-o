@@ -52,18 +52,18 @@ namespace Socket_发送_
             //string filePath = @"C:\Users\admin\Desktop\log.txt";
             //File.AppendAllText(filePath, Process.GetCurrentProcess().Id + "发送消息" + str + "\r\n");
 
-            while (true)//定义一个循环接收返回数据
-            {
-                byte[] data = new byte[1024];
-                var length = socket.Receive(data);//接收返回数据
-                string stringData = Encoding.UTF8.GetString(data, 0, length);
-                if (!string.IsNullOrWhiteSpace(stringData))
-                {
-                    Console.Write(stringData);
-                    MessageBox.Show("发送成功！");
-                    break;
-                }
-            }
+            //while (true)//定义一个循环接收返回数据
+            //{
+            //    byte[] data = new byte[1024];
+            //    var length = socket.Receive(data);//接收返回数据
+            //    string stringData = Encoding.UTF8.GetString(data, 0, length);
+            //    if (!string.IsNullOrWhiteSpace(stringData))
+            //    {
+            //        Console.Write(stringData);
+            //        MessageBox.Show("发送成功！");
+            //        break;
+            //    }
+            //}
             socket.Shutdown(SocketShutdown.Both);
             socket.Close();//关闭Socket
         }
