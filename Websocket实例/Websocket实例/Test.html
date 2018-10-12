@@ -1,0 +1,38 @@
+﻿<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lalal</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+    if(window.WebSocket != undefined) {
+	    //alert("支持");
+        var ws = new WebSocket("ws://localhost:7181");
+	    ws.onopen = function()
+	    {
+	      console.log("open");
+
+	      var json = {};
+          json.type = "snapScanner";
+          //json.value = "capture";
+	      var str = JSON.stringify(json);
+	      ws.send(str);
+	    };
+	    ws.onmessage = function(evt)
+	    {
+	      console.log(evt.data)
+	    };
+	    ws.onclose = function(evt)
+	    {
+	      console.log("WebSocketClosed!");
+	    };
+	    ws.onerror = function(evt)
+	    {
+	      console.log("WebSocketError!");
+	    };
+    }
+</script>
+
+</body>
+</html>
