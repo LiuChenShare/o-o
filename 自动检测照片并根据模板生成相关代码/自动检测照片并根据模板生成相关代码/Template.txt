@@ -1,7 +1,7 @@
 <FileData>
 <FldRef>0</FldRef>
-<FullName>E:\ISNsetup\运行程序\SXResources\resourcelibrary\photo\110111198603252853.jpg</FullName>
-<FileName>110111198603252853.jpg</FileName>
+<FullName>E:\ISNsetup\运行程序\SXResources\resourcelibrary\photo\{ImageName}</FullName>
+<FileName>{ImageName}</FileName>
 <Source>E:\ISNsetup\运行程序\SXResources\resourcelibrary\photo</Source>
 <Ext>jpg</Ext>
 <RTSource>存档</RTSource>
