@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "自动检测照片并根据模板生成相关代码", "自动检测照片并根据模板生成相关代码\自动检测照片并根据模板生成相关代码.csproj", "{A3D96CCB-47C7-44AD-B2C3-B7F2F504DF68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3D96CCB-47C7-44AD-B2C3-B7F2F504DF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D96CCB-47C7-44AD-B2C3-B7F2F504DF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D96CCB-47C7-44AD-B2C3-B7F2F504DF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D96CCB-47C7-44AD-B2C3-B7F2F504DF68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3675B58-A709-48CC-BBCC-BD1934EC6627}
+	EndGlobalSection
+EndGlobal
