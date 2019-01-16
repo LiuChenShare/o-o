@@ -15,7 +15,7 @@ namespace 检测系统默认编码
             Console.WriteLine("WebName：" + Encoding.Default.WebName + "\n");
             Console.WriteLine("HeaderName：" + Encoding.Default.HeaderName + "\n");
             Console.WriteLine("WindowsCodePage：" + Encoding.Default.WindowsCodePage + "\n");
-            Console.WriteLine("请按任意键结束：\n");
+            Console.WriteLine("请按Enter键结束：\n");
             Console.Read();
         }
     }
