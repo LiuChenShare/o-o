@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word转Pdf", "Word转Pdf\Word转Pdf.csproj", "{81303B47-292C-4F98-86CA-D0E3970ACECE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81303B47-292C-4F98-86CA-D0E3970ACECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81303B47-292C-4F98-86CA-D0E3970ACECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81303B47-292C-4F98-86CA-D0E3970ACECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81303B47-292C-4F98-86CA-D0E3970ACECE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {117BD7D8-57A9-4A5F-A3F7-EF1301DBA4BC}
+	EndGlobalSection
+EndGlobal
