@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("系统检测工具")]
+[assembly: AssemblyTitle("服务接口检测工具")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("系统检测工具")]
+[assembly: AssemblyProduct("服务接口检测工具")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("c694e2bf-52b7-4d24-be85-6ef3e5b39912")]
+[assembly: Guid("a8c0bb38-4137-43e5-8a00-68a130de709b")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

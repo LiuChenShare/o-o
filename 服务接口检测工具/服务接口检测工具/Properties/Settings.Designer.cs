@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 系统检测工具.Properties
+namespace 服务接口检测工具.Properties
 {
 
 

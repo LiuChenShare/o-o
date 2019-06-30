@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace 系统检测工具
+namespace 服务接口检测工具
 {
     static class Program
     {
