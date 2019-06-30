@@ -65,6 +65,37 @@ namespace Word转Pdf
                 MessageBox.Show(this, ex.Message);
             }
         }
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(fileName) || string.IsNullOrWhiteSpace(filePath))
+                {
+                    throw new Exception("请选择word");
+                }
+                SaveFileDialog InvokeDialog = new SaveFileDialog();
+                InvokeDialog.Title = "选择导出的pdf地址";
+                InvokeDialog.Filter = "PDF文件|*.pdf";
+                InvokeDialog.RestoreDirectory = true;
+                InvokeDialog.FileName = fileName + ".pdf";
+                if (InvokeDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    DateTime begin = DateTime.Now;
+                    Aspose.Words.Document doc = new Aspose.Words.Document(filePath);
+                    doc.Save(InvokeDialog.FileName, Aspose.Words.SaveFormat.Pdf);
+                    DateTime end = DateTime.Now;
+                    var time = (end - begin).TotalMilliseconds;
+                    MessageBox.Show(this, "总用时:"+ time);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message);
+            }
+        }
+
+
 
         public bool WordToPDF(string sourcePath, string pdfPath)
         {
