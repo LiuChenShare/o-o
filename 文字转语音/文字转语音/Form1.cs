@@ -12,6 +12,7 @@ namespace 文字转语音
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace 文字转语音
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            synth.SpeakAsyncCancelAll();
             //从.NET Framework 3.0开始，Framework提供了Speech API调用方法，这样就非常流畅完美了，不用再纠结非托管的COM了。
             //首先、右键项目、添加引用
             //左边分类选择框架、右边找到System.Speech
