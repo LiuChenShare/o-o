@@ -11,7 +11,6 @@ namespace 获取电脑硬件信息
 {
     public class HardwareHepler
     {
-
         /// <summary>
         /// 获取操作系统信息
         /// </summary>
