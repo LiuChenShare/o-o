@@ -37,7 +37,7 @@
             <Button x:Name="startButton" Content="开始提取" HorizontalAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Width="127" Height="62" FontSize="16" Click="Button_Click"/>
             <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="49" Margin="0,250,0,0" VerticalAlignment="Top" Width="380"/>
             <TextBox HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="226" Width="380" FontSize="16" VerticalContentAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" FontWeight="Bold">
-                <TextBox.Text>本工具用于对比两个文件夹下的文件差异，以【原始文件夹】为基础，筛查【最新文件夹】中新增及修改的所有文件并拷贝至【目标文件夹中】</TextBox.Text>
+                <TextBox.Text>本工具用于对比两个文件夹下的文件差异，以【原始文件夹】为基础，筛查【最新文件夹】中新增及修改的所有文件并提取至【目标文件夹】中</TextBox.Text>
             </TextBox>
         </Grid>
     </Grid>
