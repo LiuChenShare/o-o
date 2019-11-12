@@ -19,24 +19,26 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Label HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Height="30" Content="请选择原始文件夹" FontSize="16" FontWeight="Bold" Width="194"/>
-                <Button x:Name="button1" Content="选择" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="75" Height="30" FontSize="16" Click="button2_Click"/>
-                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="30" Margin="137,80,0,0" TextWrapping="Wrap" Width="800" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1043"/>
+                <Button x:Name="button1" Content="选择" HorizontalAlignment="Left" Margin="36,65,0,0" VerticalAlignment="Top" Width="75" Height="64" FontSize="16" Click="button2_Click"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="64" Margin="137,65,0,0" TextWrapping="Wrap" Width="245" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1043"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Label HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Height="30" Content="请选择最新文件夹" FontSize="16" FontWeight="Bold" Width="194"/>
-                <Button x:Name="button2" Content="选择" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="75" Height="30" FontSize="16" Click="button2_Click"/>
-                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="30" Margin="137,80,0,0" TextWrapping="Wrap" Width="800" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1045"/>
+                <Button x:Name="button2" Content="选择" HorizontalAlignment="Left" Margin="36,65,0,0" VerticalAlignment="Top" Width="75" Height="64" FontSize="16" Click="button2_Click"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="64" Margin="137,65,0,0" TextWrapping="Wrap" Width="245" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1045"/>
             </Grid>
             <Grid Grid.Row="2">
                 <Label HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Height="30" Content="请选择目标文件夹" FontSize="16" FontWeight="Bold" Width="194"/>
-                <Button x:Name="button3" Content="选择" HorizontalAlignment="Left" Margin="36,80,0,0" VerticalAlignment="Top" Width="75" Height="30" FontSize="16" Click="button2_Click"/>
-                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="30" Margin="137,80,0,0" TextWrapping="Wrap" Width="800" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1045增量2"/>
+                <Button x:Name="button3" Content="选择" HorizontalAlignment="Left" Margin="36,65,0,0" VerticalAlignment="Top" Width="75" Height="64" FontSize="16" Click="button2_Click"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="64" Margin="137,65,0,0" TextWrapping="Wrap" Width="245" VerticalAlignment="Top" VerticalContentAlignment="Center" Text="E:\审讯\GIT\ISNClient\ISN.Views\bin\ISN_CLIENT_1.3.4BUILD1045增量2"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="0">
             <Button x:Name="startButton" Content="开始提取" HorizontalAlignment="Center" Margin="0,330,0,0" VerticalAlignment="Top" Width="127" Height="62" FontSize="16" Click="Button_Click"/>
             <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" Height="49" Margin="0,250,0,0" VerticalAlignment="Top" Width="380"/>
-            <Label Content="Label" HorizontalAlignment="Center" Margin="0,200,10,0" VerticalAlignment="Top" Height="36" Width="380" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="226" Width="380" FontSize="16" VerticalContentAlignment="Center" AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="False" FontWeight="Bold">
+                <TextBox.Text>本工具用于对比两个文件夹下的文件差异，以【原始文件夹】为基础，筛查【最新文件夹】中新增及修改的所有文件并拷贝至【目标文件夹中】</TextBox.Text>
+            </TextBox>
         </Grid>
     </Grid>
 </Window>
