@@ -10,6 +10,7 @@ namespace P0001_文件对比并自动提取
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
+    /// 【P0001_文件对比并自动提取】已转移至https://github.com/LiuChenShare/FileComparisonTool仓库
     /// </summary>
     public partial class MainWindow : Window
     {
