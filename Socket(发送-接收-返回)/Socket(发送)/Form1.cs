@@ -30,8 +30,8 @@ namespace Socket_发送_
             {
                 return;
             }
-            IPAddress ip = IPAddress.Parse("127.0.0.1");//接收端所在IP
-            IPEndPoint ipEnd = new IPEndPoint(ip, 1111);//接收端所监听的接口
+            IPAddress ip = IPAddress.Parse(textBox2.Text);//接收端所在IP
+            IPEndPoint ipEnd = new IPEndPoint(ip, int.Parse(textBox3.Text));//接收端所监听的接口
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);//初始化一个Socket对象
             try
             {
