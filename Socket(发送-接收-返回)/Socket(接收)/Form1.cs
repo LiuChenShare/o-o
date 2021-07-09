@@ -15,8 +15,15 @@ namespace Socket_接收_
 {
     public partial class Form1 : Form
     {
-        Thread t;
         TcpListener tcpl = new TcpListener(new IPAddress(new byte[] { 127, 0, 0, 1 }), 1111);//定义一个TcpListener对象监听本地的1111端口
+
+        //socket监听线程
+        Thread t1;
+        //socket获取数据线程
+        Thread t2;
+        //当前连接的socket
+        Socket socket;
+
         /// <summary>
         /// 是否启动接收
         /// </summary>
@@ -40,8 +47,8 @@ namespace Socket_接收_
                 tcpl = new TcpListener(IPAddress.Parse(textBox1.Text), int.Parse(textBox2.Text));//定义一个TcpListener对象监听本地的1111端口
 
                 startState = true;
-                t = new Thread(ReciveMsg);
-                t.Start();
+                t1 = new Thread(AcceptSocket);
+                t1.Start();
             }
         }
 
@@ -55,16 +62,17 @@ namespace Socket_接收_
             if (startState)
             {
                 tcpl.Stop();
-                t.Abort();
+                t1.Abort();
+                t2.Abort();
                 startState = false;
             }
         }
 
 
         /// <summary>        
-        /// /// 接收发送给本机ip对应端口号的数据报        
-        /// /// </summary>        
-        private void  ReciveMsg()
+        /// 接收Socket连接_接收发送给本机ip对应端口号的数据报        
+        /// </summary>        
+        private void  AcceptSocket()
         {
             try
             {
@@ -75,15 +83,50 @@ namespace Socket_接收_
                     {
                         Socket s = tcpl.AcceptSocket();//挂起一个Socket对象
                         string remote = s.RemoteEndPoint.ToString();//获取发送端的IP及端口转为String备用
+
+                        if (t2 != null)
+                            t2.Abort();
+                        socket = s;
+                        t2 = new Thread(ReciveMsg);
+                        t2.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show(ex.Message);
+                    }
+                }
+                tcpl.Stop();//停止监听
+                t1.Abort();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>        
+        /// 接收发送给本机ip对应端口号的数据        
+        /// </summary>        
+        private void ReciveMsg()
+        {
+            try
+            {
+                while (startState)
+                {
+                    try
+                    {
                         Byte[] stream = new Byte[1024 * 1024 * 2];
-                        var length = s.Receive(stream);//接收发送端发过来的数据,写入字节数组
+                        var length = socket.Receive(stream);//接收发送端发过来的数据,写入字节数组
                                                        //BGW_Handle.ReportProgress(1, "接收来自[" + remote + "]信息");
 
                         //string str = System.Text.Encoding.Default.GetString(stream, 0, length);
 
                         string _data = Encoding.UTF8.GetString(stream, 0, length);//将字节数据数组转为String
-                        s.Send(stream);//将接收到的内容，直接返回接收端
-                        s.Shutdown(SocketShutdown.Both);
+                        byte[] stream2 = new byte[length];
+                        Array.Copy(stream, stream2, length);
+                        //stream.CopyTo(stream2, length-1);
+                        socket.Send(stream2);//将接收到的内容，直接返回接收端
+                        //s.Shutdown(SocketShutdown.Both);
                         if (!string.IsNullOrEmpty(_data))
                         {
                             //string filePath3 = @"C:\Users\admin\Desktop\log3.txt";
@@ -94,15 +137,14 @@ namespace Socket_接收_
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        //MessageBox.Show(ex.Message);
                     }
                 }
-                tcpl.Stop();//停止监听
-                t.Abort();
+                t2.Abort();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -118,7 +160,8 @@ namespace Socket_接收_
                 if (startState)
                 {
                     tcpl.Stop();
-                    t.Abort();
+                    t1.Abort();
+                    t2.Abort();
                     startState = false;
                 }
             }
